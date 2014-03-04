@@ -25,3 +25,13 @@ body, a:link, a:visited, a:active{
   border-radius:10px;
   position:absolute;
 }
+.batmanYellow{
+  border:20px solid yellow;
+  border-radius:20px;
+  position:absolute;
+}
+.batmanBlack{
+  border:20px solid black;
+  border-radius:20px;
+  position:absolute;
+}
