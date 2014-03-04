@@ -30,11 +30,22 @@ $(document).ready(function(){
     $('body').append(dancer.$node);
     window.dancers.push(dancer);
   });
-$(".toTheLeft").on("click", function(event){
-  for (var i = 0; i < window.dancers.length; i++) {
-    console.log(window.dancers);
-    window.dancers[i].lineup();
-  };
- });
+$("#reposition").on("click", function(event){
+  if($(this).hasClass(".toTheLeft")){
+    for (var i = 0; i < window.dancers.length; i++) {
+      window.dancers[i].lineup();
+    }
+    $(this).removeClass( ".toTheLeft" ).addClass( ".danceOn" );
+    $(this).text("dance on");
+  }else{
+    for (var i = 0; i < window.dancers.length; i++) {
+      window.dancers[i].setPosition(
+        $("body").height() * Math.random(),
+        $("body").width() * Math.random());
+    }
+    $(this).removeClass( ".danceOn" ).addClass( ".toTheLeft" );
+    $(this).text("to the left");
+  }
 });
 
+});
