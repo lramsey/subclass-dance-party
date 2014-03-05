@@ -9,6 +9,7 @@ var Dancer = function(top, left, timeBetweenSteps){
   this.setPosition(top, left);
 
   this.step();
+  this.collision();
 
 };
 
@@ -37,4 +38,27 @@ var Dancer = function(top, left, timeBetweenSteps){
       left: left
     };
     this.$node.css(styleSettings);
+  };
+
+  Dancer.prototype.collision = function(){
+    for (var i = 0; i < window.dancers.length; i++) {
+      var topFriend = parseInt(window.dancers[i].$node.css('top'),10);
+      var topThis = parseInt(this.$node.css('top'),10);
+      var leftFriend = parseInt(window.dancers[i].$node.css('left'), 10);
+      var leftThis = parseInt(this.$node.css('left'), 10);
+      if(this !== window.dancers[i]){
+        if(Math.pow(topFriend - topThis, 2) + Math.pow(leftFriend - leftThis,2) < 500){
+          if(topThis < 300){
+            this.$node.css({
+              height: "+=5px",
+              width: "+=5px"
+            });
+          }
+        }
+      }
+    };
+    var that = this;
+    setTimeout(function(){
+      that.collision();
+    }, 100);
   };

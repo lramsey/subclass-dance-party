@@ -1,6 +1,6 @@
 $(document).ready(function(){
   window.dancers = [];
-  console.log(window.dancers);
+
   $(".addDancerButton").on("click", function(event){
     /* This function sets up the click handlers for the create-dancer
      * buttons on index.html. You should only need to make one small change to it.
@@ -31,21 +31,24 @@ $(document).ready(function(){
     window.dancers.push(dancer);
   });
 $("#reposition").on("click", function(event){
-  if($(this).hasClass(".toTheLeft")){
+  console.log($(this).hasClass("toTheLeft"));
+  if($(this).hasClass("toTheLeft")){
     for (var i = 0; i < window.dancers.length; i++) {
       window.dancers[i].lineup();
+      window.dancers[i].$node.css({ height: "20px",
+                                    width: "20px"});
     }
-    $(this).removeClass( ".toTheLeft" ).addClass( ".danceOn" );
-    $(this).text("dance on");
-  }else{
+    $(this).removeClass( "toTheLeft" ).addClass( "danceOn" );
+    $(this).text("dance on")
+
+  }else {
     for (var i = 0; i < window.dancers.length; i++) {
       window.dancers[i].setPosition(
         $("body").height() * Math.random(),
         $("body").width() * Math.random());
     }
-    $(this).removeClass( ".danceOn" ).addClass( ".toTheLeft" );
+    $(this).removeClass( "danceOn" ).addClass( "toTheLeft" );
     $(this).text("to the left");
   }
 });
-
 });

@@ -3,12 +3,6 @@ var Batman = function(top, left, timeBetweenSteps){
   this.$node.removeClass( "dancer" ).addClass( "batmanYellow" ).attr('id', 'batman');
   this.$node.on('click', function(event){
     $(this).toggleClass('batmanBlack');
-    // if($(this).hasClass('.batmanYellow')){
-    //     console.log('hello');
-    //   $(this).removeClass('.batmanYellow').addClass('.batmanBlack');
-    // } else{
-    //   $(this).removeClass('.batmanBlack').addClass('.batmanYellow');
-    // }
     });
 };
 Batman.prototype =  Object.create(Dancer.prototype);
