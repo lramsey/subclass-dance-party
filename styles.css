@@ -5,6 +5,8 @@ body{
   margin: 0px;
   background-color:#444;
   font-size: 18px;
+  background-size: 100%;
+  background-image:url('http://www.jazzejunque.com/images/fullsize/blackamerican/114.jpg');
 }
 body, a:link, a:visited, a:active{
   color: lightblue;
@@ -21,7 +23,31 @@ body, a:link, a:visited, a:active{
   background-color: #777;
 }
 .dancer{
-  border:10px solid red;
-  border-radius:10px;
+  height: 120px;
+  width: 100px;
+  background-image: url('http://www.vgmuseum.com/rips/snes/bugs_run.gif');
+  background-size: 100%;
+  position:absolute;
+}
+.batmanYellow{
+   height: 110px;
+  width: 150px;
+  background-size: 100%;
+  background-image: url('http://fc04.deviantart.net/fs71/f/2013/009/c/2/batman_signal_sprite_by_erabous-d5qxibj.png');
+  position:absolute;
+}
+.batmanBlack{
+  height: 110px;
+  width: 100px;
+  background-size: 100%;
+  background-image: url('http://i718.photobucket.com/albums/ww186/Mrliam162/GIFS/BatStance.gif');
+  position:absolute;
+}
+
+.catwoman{
+  height: 100px;
+  width: 100px;
+  background-image: url('http://www.vgmuseum.com/rips/snes/elmer_slap.gif');
+  background-size: 100%;
   position:absolute;
 }
